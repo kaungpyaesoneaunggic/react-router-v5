@@ -3,11 +3,11 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const { data: blog, error, isPending } = useFetch('https://dojo-blog-xi.vercel.app/blogs/' + id);
+  const { data: blog, error, isPending } = useFetch('https://json-server-vercel-kpsa.vercel.app/blogs/' + id);
   const history = useHistory();
 
   const handleClick = () => {
-    fetch('https://dojo-blog-xi.vercel.app/blogs/' + blog.id, {
+    fetch('https://json-server-vercel-kpsa.vercel.app/blogs/' + blog.id, {
       method: 'DELETE'
     }).then(() => {
       history.push('/');
